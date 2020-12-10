@@ -1,4 +1,4 @@
-package com.kastudio.doit.ZinciriKirmaPackage;
+package com.kastudio.doit.Chain;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;

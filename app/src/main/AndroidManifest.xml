@@ -22,7 +22,7 @@
             android:configChanges="orientation"
             android:theme="@style/CustomStyle" />
         <activity android:name=".ToDoList.ToDoListActivity" />
-        <activity android:name=".ZinciriKirmaPackage.ZinciriKirma" />
+        <activity android:name=".Chain.ZinciriKirma" />
         <activity
             android:name=".Kanban.KanbanPopUpActivity"
             android:theme="@style/CustomStyle" />

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F4F5"
-    tools:context=".ZinciriKirmaPackage.ZinciriKirma">
+    tools:context=".Chain.ZinciriKirma">
 
     <Button
         android:id="@+id/zinciri_kirma_back_button"
