@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="deleteRed">#ef233c</color>
+
+    <color name="one">#ffb4a2</color>
+    <color name="two">#80ed99</color>
+    <color name="three">#48cae4</color>
+    <color name="four">#f96f5d</color>
+    <color name="five">#a9b2ac</color>
+    <color name="six">#ea9ab2</color>
+    <color name="seven">#fbb13c</color>
+    <color name="eight">#ff6392</color>
+    <color name="nine">#77bfa3</color>
+    <color name="ten">#b76935</color>
+
+    <color name="oneNote">#FFC7BA</color>
+    <color name="twoNote">#B2FFC3</color>
+    <color name="threeNote">#BBF4FF</color>
+    <color name="fourNote">#FFA295</color>
+    <color name="fiveNote">#B3B6B4</color>
+    <color name="sixNote">#EFB0C3</color>
+    <color name="sevenNote">#F3CC90</color>
+    <color name="eightNote">#F8ACC3</color>
+    <color name="nineNote">#91C1AF</color>
+    <color name="tenNote">#E4B99B</color>
+
+    <array name="colorsForNote">
+        <item>@color/oneNote</item>
+        <item>@color/twoNote</item>
+        <item>@color/threeNote</item>
+        <item>@color/fourNote</item>
+        <item>@color/fiveNote</item>
+        <item>@color/sixNote</item>
+        <item>@color/sevenNote</item>
+        <item>@color/eightNote</item>
+        <item>@color/nineNote</item>
+        <item>@color/tenNote</item>
+    </array>
+
+
+    <array name="colors">
+        <item>@color/one</item>
+        <item>@color/two</item>
+        <item>@color/three</item>
+        <item>@color/four</item>
+        <item>@color/five</item>
+        <item>@color/six</item>
+        <item>@color/seven</item>
+        <item>@color/eight</item>
+        <item>@color/nine</item>
+        <item>@color/ten</item>
+    </array>
+
+
+
+
+</resources>

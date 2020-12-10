@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/kanban_bottom_sheet">
+
+    <HorizontalScrollView
+        android:id="@+id/kanban_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.thebluealliance.spectrum.SpectrumPalette
+            android:id="@+id/kanban_bottom_sheet_palette"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:spectrum_columnCount="10"
+            app:spectrum_colors="@array/colorsForNote" />
+    </HorizontalScrollView>
+
+
+    <EditText
+        android:id="@+id/kanban_bottom_sheet_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="@string/to_do"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        android:theme="@style/TextInputLayoutAppearance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/kanban_bottom_sheet_save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kanban_scroll_view" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#707070"
+        app:layout_constraintEnd_toEndOf="@+id/kanban_bottom_sheet_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/kanban_bottom_sheet_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/kanban_bottom_sheet_edit_text" />
+
+    <Button
+        android:id="@+id/kanban_bottom_sheet_save"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done_button"
+        android:textColor="@drawable/done_button_text_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/kanban_bottom_sheet_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kanban_bottom_sheet_edit_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="330dp"
+    android:layout_height="590dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/to_do_list_pop_up_back_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/down_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/to_do_list_pop_up_list_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="15dp"
+                android:letterSpacing="0.02"
+                android:text="Your list name"
+                android:textColor="#707070"
+                android:textSize="19sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/to_do_list_pop_up_back_button"
+                app:layout_constraintTop_toTopOf="@+id/to_do_list_pop_up_back_button" />
+
+            <CheckBox
+                android:id="@+id/to_do_list_pop_up_check_box"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:button="@drawable/custom_check_box"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/to_do_list_pop_up_list_name_text_view" />
+
+            <EditText
+                android:id="@+id/to_do_list_pop_up_task_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:gravity="start"
+                android:letterSpacing="0.02"
+                android:minHeight="20dp"
+                android:text="Your list name"
+                android:textColor="#707070"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:layout_constraintEnd_toEndOf="@+id/to_do_list_pop_up_list_name_text_view"
+                app:layout_constraintStart_toEndOf="@+id/to_do_list_pop_up_check_box"
+                app:layout_constraintTop_toTopOf="@+id/to_do_list_pop_up_check_box" />
+
+            <TextView
+                android:id="@+id/to_do_list_pop_up_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:letterSpacing="0.1"
+                android:text="18 November 2020  22:25"
+                android:textColor="#A9A9A9"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/to_do_list_pop_up_delete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/to_do_list_pop_up_delete" />
+
+            <ImageView
+                android:id="@+id/to_do_list_pop_up_delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/delete_icon_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/scrollView2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="#F2F4F5"
+                    app:layout_constraintBottom_toTopOf="@+id/to_do_list_pop_up_delete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/to_do_list_pop_up_task_edit_text">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/to_do_list_pop_up_remind_me"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/to_do_list_pop_up_remind_me_icon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/bell_icon"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/to_do_list_pop_up_remind_me_cancel"
+                                app:layout_constraintStart_toEndOf="@+id/to_do_list_pop_up_remind_me_icon"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/to_do_list_pop_up_remind_me_text_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/remind_me"
+                                    android:textColor="#a9a9a9"
+                                    android:textSize="17sp" />
+
+                                <TextView
+                                    android:id="@+id/to_do_list_pop_up_remind_me_date_text_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#707070"
+                                    android:textSize="15sp"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/to_do_list_pop_up_remind_me_cancel"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginEnd="20dp"
+                                android:visibility="invisible"
+                                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="#707070" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:backgroundTint="#FFFFFF"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="@null"
+                        android:layout_margin="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/to_do_list_pop_up_remind_me">
+
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <EditText
+                                android:id="@+id/to_do_list_pop_up_note"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="start"
+                                android:hint="@string/write_your_note"
+                                android:textSize="17sp"
+                                android:layout_margin="10dp"
+                                android:textColor="#a9a9a9"
+                                android:background="@null"
+                                android:theme="@style/TextInputLayoutAppearance"/>
+
+                        </ScrollView>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kastudio.doit">
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DoIT">
+        <activity android:name=".LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ToDoList.ToDoListPopUpActivity"
+            android:configChanges="orientation"
+            android:theme="@style/CustomStyle" />
+        <activity android:name=".ToDoList.ToDoListActivity" />
+        <activity android:name=".ZinciriKirmaPackage.ZinciriKirma" />
+        <activity
+            android:name=".Kanban.KanbanPopUpActivity"
+            android:theme="@style/CustomStyle" />
+        <activity
+            android:name=".Note.NotePopUpActivity"
+            android:theme="@style/CustomStyle" />
+        <activity
+            android:name=".Kanban.KanbanActivity"
+            android:label="@string/title_activity_kanban"
+            android:theme="@style/Theme.DoIT.NoActionBar" />
+        <activity
+            android:name=".PopUp.AddTargetPopUpActivity"
+            android:theme="@style/CustomStyle" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".DoItContentProvider"
+            android:authorities="com.kastudio.doit.DoIdContentProvider" />
+
+        <receiver android:name=".Kanban.KanbanBroadcastReceiver" />
+
+        <service android:name=".AppStopped" />
+    </application>
+
+</manifest>

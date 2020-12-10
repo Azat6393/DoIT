@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="370dp"
+    android:layout_height="670dp"
+    android:layout_gravity="center"
+    android:id="@+id/note_pop_up">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_pop_up_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/note_pop_up_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/down_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/note_pop_up_edit"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/edit_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/note_pop_up_back"
+                app:layout_constraintEnd_toStartOf="@+id/note_pop_up_color"
+                app:layout_constraintTop_toTopOf="@+id/note_pop_up_back" />
+
+            <ImageView
+                android:id="@+id/note_pop_up_save_edit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ok_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/note_pop_up_back"
+                app:layout_constraintEnd_toStartOf="@+id/note_pop_up_color"
+                app:layout_constraintTop_toTopOf="@+id/note_pop_up_back" />
+
+            <ImageView
+                android:id="@+id/note_pop_up_color"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/tshirt_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/note_pop_up_edit"
+                app:layout_constraintEnd_toStartOf="@+id/note_pop_up_delete"
+                app:layout_constraintTop_toTopOf="@+id/note_pop_up_edit" />
+
+            <ImageView
+                android:id="@+id/note_pop_up_delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/delete_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/note_pop_up_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/note_pop_up_color" />
+
+
+            <com.thebluealliance.spectrum.SpectrumPalette
+                android:id="@+id/note_pop_up_palette"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_back"
+                app:spectrum_colors="@array/colorsForNote"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/note_pop_up_date_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18 Nov 2020  22:25  |   55 characters"
+                android:textColor="#A9A9A9"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_palette" />
+
+            <TextView
+                android:id="@+id/note_pop_up_title_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="end"
+                android:text="Note Title"
+                android:textColor="#707070"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_date_textView" />
+
+            <EditText
+                android:id="@+id/note_pop_up_title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="end"
+                android:text="Note Title"
+                android:textColor="#707070"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:background="@null"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_date_textView" />
+
+            <TextView
+                android:id="@+id/note_pop_up_note_textView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="No, There are a number of reasons why a company's decision might be delayed. A very simple explanation
+is that one of your interviewers hasn't provided their feedback yet. Very, very few companies have a policy
+of not responding to candidates they reject. "
+                android:textColor="#707070"
+                android:textSize="18sp"
+                android:gravity="start"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_title_textView" />
+
+            <EditText
+                android:id="@+id/note_pop_up_note_editText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@null"
+                android:gravity="start"
+                android:text="No, There are a number of reasons why a company's decision might be delayed. A very simple explanation
+is that one of your interviewers hasn't provided their feedback yet. Very, very few companies have a policy
+of not responding to candidates they reject. "
+                android:textColor="#707070"
+                android:textSize="18sp"
+                android:theme="@style/TextInputLayoutAppearance"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_pop_up_title_edit_text"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

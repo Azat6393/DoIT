@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F4F5"
+    tools:context=".ZinciriKirmaPackage.ZinciriKirma">
+
+    <Button
+        android:id="@+id/zinciri_kirma_back_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/back_icon"
+        app:iconGravity="textStart"
+        app:iconSize="33dp"
+        app:iconTint="#707070"
+        android:onClick="zincirBackOnClick"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_zincirikirma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chain"
+        android:textColor="#707070"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/zinciri_kirma_back_button"
+        app:layout_constraintStart_toEndOf="@+id/zinciri_kirma_back_button"
+        app:layout_constraintTop_toTopOf="@+id/zinciri_kirma_back_button" />
+
+    <ImageView
+        android:id="@+id/zinciri_kirma_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/dots"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_zincirikirma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view_zincirikirma"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/zinciri_kirma_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#FFFFFF"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_zincirikirma">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/zinciri_kirma_target_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:letterSpacing="0.05"
+                android:layout_margin="10dp"
+                android:text="Her gun bir saat ders calismak"
+                android:textColor="#A9A9A9"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/zinciri_kirma_activity_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zinciri_kirma_card_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/zinciri_kirma_step_button"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#56E39F"
+        app:cornerRadius="25dp"
+        android:onClick="stepButton"
+        android:text="@string/step"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
