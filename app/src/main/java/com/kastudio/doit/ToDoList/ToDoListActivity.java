@@ -55,7 +55,7 @@ import java.util.UUID;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
-public class ToDoListActivity extends AppCompatActivity {
+public class ToDoListActivity extends AppCompatActivity implements CompletedTaskRecyclerView.OnCheckedChangeListener, TaskRecyclerView.OnCheckedChangeListener {
 
     MaterialButton completedButton;
     Button bottomSheetButton;
@@ -122,8 +122,20 @@ public class ToDoListActivity extends AppCompatActivity {
         getTaskData();
         checkCompletedButton();
 
-        taskRecyclerView1 = new TaskRecyclerView(task,taskUUID,taskNote,taskDate,listNameString,this);
-        completedTaskRecyclerView1 = new CompletedTaskRecyclerView(completedTask,completedTaskUUID,completedTaskNote,completedTaskDate,listNameString,this);
+        taskRecyclerView1 = new TaskRecyclerView(task,
+                taskUUID,
+                taskNote,
+                taskDate,
+                listNameString,
+                this,
+                this);
+        completedTaskRecyclerView1 = new CompletedTaskRecyclerView(completedTask,
+                completedTaskUUID,
+                completedTaskNote,
+                completedTaskDate,
+                listNameString,
+                this,
+                this);
 
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(ToDoListActivity.this));
         completedTaskRecyclerView.setLayoutManager(new LinearLayoutManager(ToDoListActivity.this));
@@ -500,5 +512,23 @@ public class ToDoListActivity extends AppCompatActivity {
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        clearArrays();
+        getTaskData();
+        checkCompletedButton();
+        taskRecyclerView1.notifyDataSetChanged();
+        completedTaskRecyclerView1.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onChange(int position) {
+        clearArrays();
+        getTaskData();
+        checkCompletedButton();
+        taskRecyclerView1.notifyDataSetChanged();
+        completedTaskRecyclerView1.notifyDataSetChanged();
     }
 }

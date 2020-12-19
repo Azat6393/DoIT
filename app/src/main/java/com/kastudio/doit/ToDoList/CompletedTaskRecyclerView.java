@@ -32,14 +32,22 @@ public class CompletedTaskRecyclerView extends RecyclerView.Adapter<CompletedTas
     private final ArrayList<String> date;
     private final String listName;
     private final Activity activity;
+    private final OnCheckedChangeListener changed;
 
-    public CompletedTaskRecyclerView(ArrayList<String> completedTask, ArrayList<String> uuid, ArrayList<String> note, ArrayList<String> date, String listName, Activity activity){
+    public CompletedTaskRecyclerView(ArrayList<String> completedTask,
+                                     ArrayList<String> uuid,
+                                     ArrayList<String> note,
+                                     ArrayList<String> date,
+                                     String listName,
+                                     Activity activity,
+                                     OnCheckedChangeListener changed){
         this.completedTask = completedTask;
         this.uuid = uuid;
         this.note = note;
         this.date = date;
         this.listName = listName;
         this.activity = activity;
+        this.changed = changed;
     }
 
     @NonNull
@@ -60,15 +68,15 @@ public class CompletedTaskRecyclerView extends RecyclerView.Adapter<CompletedTas
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                holder.textView.setPaintFlags(0);
-                holder.textView.setTypeface(holder.textView.getTypeface(), Typeface.NORMAL);
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(DoItContentProvider.TO_DO_LIST_COMPLETED,0);
-                mContext.getContentResolver().update(DoItContentProvider.TO_DO_LIST_URI,contentValues,"uuidTask=?",new String[]{uuid.get(position)});
-                Intent intent = activity.getIntent();
-                activity.finish();
-                activity.startActivity(intent);
-                activity.overridePendingTransition(0,0);
+                if (!isChecked){
+                    holder.textView.setPaintFlags(0);
+                    holder.textView.setTypeface(holder.textView.getTypeface(), Typeface.NORMAL);
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put(DoItContentProvider.TO_DO_LIST_COMPLETED,0);
+                    mContext.getContentResolver().update(DoItContentProvider.TO_DO_LIST_URI,contentValues,"uuidTask=?",new String[]{uuid.get(position)});
+                    changed.onItemClick(position);
+                    holder.checkBox.setChecked(true);
+                }
             }
         });
 
@@ -108,4 +116,9 @@ public class CompletedTaskRecyclerView extends RecyclerView.Adapter<CompletedTas
 
         }
     }
+
+    interface OnCheckedChangeListener{
+        void onItemClick(int position);
+    }
+
 }

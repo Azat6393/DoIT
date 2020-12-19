@@ -37,14 +37,22 @@ public class TaskRecyclerView extends RecyclerView.Adapter<TaskRecyclerView.Post
     private final ArrayList<String> date;
     private final String listName;
     private final Activity activity;
+    private final OnCheckedChangeListener listener;
 
-    public TaskRecyclerView (ArrayList<String> task, ArrayList<String> uuidTask, ArrayList<String> note, ArrayList<String> date, String listName, Activity activity){
+    public TaskRecyclerView (ArrayList<String> task,
+                             ArrayList<String> uuidTask,
+                             ArrayList<String> note,
+                             ArrayList<String> date,
+                             String listName,
+                             Activity activity,
+                             OnCheckedChangeListener listener){
         this.task = task;
         this.uuidTask = uuidTask;
         this.note = note;
         this.date = date;
         this.listName = listName;
         this.activity = activity;
+        this.listener = listener;
     }
 
     @NonNull
@@ -69,10 +77,8 @@ public class TaskRecyclerView extends RecyclerView.Adapter<TaskRecyclerView.Post
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(DoItContentProvider.TO_DO_LIST_COMPLETED,1);
                     mContext.getContentResolver().update(DoItContentProvider.TO_DO_LIST_URI,contentValues,"uuidTask=?",new String[]{uuidTask.get(position)});
-                    Intent intent = activity.getIntent();
-                    activity.finish();
-                    activity.startActivity(intent);
-                    activity.overridePendingTransition(0,0);
+                    listener.onChange(position);
+                    holder.checkBox.setChecked(false);
                 }
             }
         });
@@ -111,4 +117,9 @@ public class TaskRecyclerView extends RecyclerView.Adapter<TaskRecyclerView.Post
             checkBox = itemView.findViewById(R.id.task_recycler_view_check_box);
         }
     }
+
+    interface OnCheckedChangeListener{
+        void onChange(int position);
+    }
+
 }
