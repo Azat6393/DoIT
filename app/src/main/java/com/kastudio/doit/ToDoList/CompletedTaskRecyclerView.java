@@ -69,8 +69,8 @@ public class CompletedTaskRecyclerView extends RecyclerView.Adapter<CompletedTas
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (!isChecked){
-                    holder.textView.setPaintFlags(0);
-                    holder.textView.setTypeface(holder.textView.getTypeface(), Typeface.NORMAL);
+                    //holder.textView.setPaintFlags(0);
+                    //holder.textView.setTypeface(holder.textView.getTypeface(), Typeface.NORMAL);
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(DoItContentProvider.TO_DO_LIST_COMPLETED,0);
                     mContext.getContentResolver().update(DoItContentProvider.TO_DO_LIST_URI,contentValues,"uuidTask=?",new String[]{uuid.get(position)});

@@ -73,7 +73,7 @@ public class TaskRecyclerView extends RecyclerView.Adapter<TaskRecyclerView.Post
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    holder.textView.setPaintFlags(holder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    //holder.textView.setPaintFlags(holder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(DoItContentProvider.TO_DO_LIST_COMPLETED,1);
                     mContext.getContentResolver().update(DoItContentProvider.TO_DO_LIST_URI,contentValues,"uuidTask=?",new String[]{uuidTask.get(position)});
